@@ -1,0 +1,30 @@
+<div class="row">
+    {{#each notes}}
+        <div class="col-md-3 mt-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h4 class="card-title bold">{{title}}</h4>
+                    <p style="color: #ccc">{{description}}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/notes/edit/{{_id}}" class="btn btn-sm btn-warning btn-block">Edit</a>
+                    <form class="mt-1" action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+                      <input type="hidden" name="_method" value="DELETE">
+                      <button onClick="return confirm('Are you sure you want delete this beautiful note?');" type="submit" class="btn btn-sm btn-danger btn-block">
+                          Delete
+                      </button>
+                    </form>                
+                    </div>
+            </div>
+        </div>
+    
+    {{else}}
+        <div class="card mx-auto mt-4">
+            <div class="card-body text-center">
+                <h2 style="font-size: 37px">Hello {{user.name}}!</h2>
+                <p class="lead" style="font-size: 14px">There are not notes yet...</p>
+                <a href="/notes/add" class="btn btn-success btn-block">Make one!</a>
+            </div>
+        </div>
+    {{/each}}
+</div>
