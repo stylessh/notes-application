@@ -6,18 +6,22 @@
         <div class="card-body">
             <form action="/notes/new-note" method="POST">
 
-                <div class="form-group">
+                <div class="form-group mic-recognition-box">
                     <input type="text" 
                     name="title"
                     placeholder="Title"
-                    class="form-control"
+                    class="form-control input-title"
                     autofocus>
+
+                    <i class="fas fa-microphone" id="icon-title"></i>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group  mic-recognition-box">
                     <textarea name="description" 
-                    class="form-control"
+                    class="form-control input-description"
                     placeholder="Description"></textarea>
+
+                        <i class="fas fa-microphone" id="icon-description"></i>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-8">
@@ -35,3 +39,7 @@
         </div>
     </div>
 </div>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+<script src="/js/voiceRecognition.js"></script>

@@ -1,0 +1,10 @@
+.mic-recognition-box {
+    position: relative;
+}
+
+.mic-recognition-box i {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+}
